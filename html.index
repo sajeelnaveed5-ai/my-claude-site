@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ally Impex — Premium Apparel & Sportswear Manufacturer | USA</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #080808;
+    --white: #f4f2ee;
+    --red: #c8102e;
+    --red-dark: #9b0b21;
+    --gold: #b8922a;
+    --gold-light: #d4a843;
+    --gray: #2a2a2a;
+    --gray-mid: #555;
+    --gray-light: #aaa;
+    --offwhite: #f4f2ee;
+  }
+
+  (*, *)::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: rgba(8,8,8,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,146,42,0.2);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo-icon {
+    width: 40px; height: 40px;
+    background: var(--red);
+    clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px; color: #fff;
+  }
+  .nav-logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px; letter-spacing: 3px;
+    color: var(--white);
+  }
+  .nav-logo-text span { color: var(--gold); }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gray-light); text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--red);
+    color: #fff !important;
+    padding: 8px 20px;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; color: #fff !important; }
+
+  /* ── HERO ── */
+  #hero {
+    position: relative; height: 100vh; min-height: 700px;
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+  }
+  .hero-bg img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+    filter: brightness(0.38);
+    animation: heroZoom 14s ease-in-out infinite alternate;
+  }
+  @keyframes heroZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.07); }
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(120deg, rgba(8,8,8,0.7) 40%, rgba(200,16,46,0.12) 100%);
+  }
+
+  .hero-stripe {
+    position: absolute; left: 0; top: 0; bottom: 0; width: 6px;
+    background: var(--red); z-index: 2;
+  }
+
+  .hero-content {
+    position: relative; z-index: 3;
+    padding: 0 80px; max-width: 820px;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(184,146,42,0.15);
+    border: 1px solid var(--gold);
+    padding: 6px 16px; margin-bottom: 28px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); animation: pulse 1.5s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 9vw, 120px);
+    line-height: .92; letter-spacing: 4px;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .hero-title .accent { color: var(--red); }
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-weight: 300; letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(244,242,238,0.6);
+    margin-bottom: 32px;
+  }
+
+  .hero-desc {
+    font-size: 16px; line-height: 1.7;
+    color: rgba(244,242,238,0.75);
+    max-width: 520px; margin-bottom: 44px;
+  }
+
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--red); color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none;
+    padding: 14px 32px;
+    clip-path: polygon(10px 0%,100% 0%,calc(100%-10px) 100%,0% 100%);
+    transition: background .2s, transform .2s;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1.5px solid var(--gold); color: var(--gold);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none;
+    padding: 14px 32px;
+    transition: background .2s, color .2s, transform .2s;
+  }
+  .btn-outline:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
+
+  .hero-stats {
+    position: absolute; right: 80px; bottom: 80px; z-index: 3;
+    display: flex; gap: 48px;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px; line-height: 1;
+    color: var(--gold); letter-spacing: 2px;
+  }
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gray-light);
+  }
+
+  /* ── SECTION UTILS ── */
+  section { padding: 100px 80px; }
+  .section-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    letter-spacing: 3px; color: var(--white);
+    margin-bottom: 16px;
+  }
+  .section-title span { color: var(--gold); }
+  .section-line {
+    width: 60px; height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    margin-bottom: 48px;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--gray);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about-img-wrap {
+    position: relative;
+  }
+  .about-img-wrap img {
+    width: 100%; height: 520px;
+    object-fit: cover;
+    filter: grayscale(20%);
+  }
+  .about-img-badge {
+    position: absolute; bottom: -20px; right: -20px;
+    background: var(--red); color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px; letter-spacing: 2px;
+    padding: 20px 24px; text-align: center;
+    border: 3px solid var(--black);
+  }
+  .about-img-badge span { display: block; font-size: 36px; line-height: 1; }
+  .about-text p {
+    color: rgba(244,242,238,0.75);
+    font-size: 16px; line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .about-flags {
+    display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;
+  }
+  .flag-chip {
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(184,146,42,0.3);
+    padding: 8px 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gold-light);
+  }
+  .flag-chip::before {
+    content: '✓'; color: var(--red); font-weight: 900;
+  }
+
+  /* ── VIDEO BANNER ── */
+  #video-section {
+    position: relative; padding: 0; height: 520px;
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+  #video-section video, #video-section img.video-fallback {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.35);
+  }
+  .video-overlay-content {
+    position: relative; z-index: 2; text-align: center;
+  }
+  .video-overlay-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 7vw, 96px);
+    letter-spacing: 6px; color: var(--white);
+    line-height: .95;
+  }
+  .video-overlay-content h2 em {
+    color: var(--gold); font-style: normal;
+  }
+  .video-overlay-content p {
+    margin-top: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; letter-spacing: 4px;
+    text-transform: uppercase; color: rgba(244,242,238,0.6);
+  }
+
+  /* ── PRODUCTS ── */
+  #products { background: var(--black); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2px;
+  }
+  .product-card {
+    position: relative; overflow: hidden;
+    background: var(--gray);
+    cursor: pointer;
+  }
+  .product-card img {
+    width: 100%; height: 380px;
+    object-fit: cover;
+    transition: transform .5s ease, filter .4s;
+    filter: brightness(0.85);
+    display: block;
+  }
+  .product-card:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.6);
+  }
+  .product-info {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 24px 20px;
+    background: linear-gradient(to top, rgba(8,8,8,.95) 60%, transparent);
+    transform: translateY(20px);
+    transition: transform .35s;
+  }
+  .product-card:hover .product-info { transform: translateY(0); }
+  .product-cat {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 4px;
+  }
+  .product-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .product-price {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .price-tag {
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px; letter-spacing: 1px;
+    padding: 4px 12px;
+    clip-path: polygon(6px 0%, 100% 0%, calc(100%-6px) 100%, 0% 100%);
+  }
+  .price-note {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--gray-light);
+  }
+  .product-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: var(--red); color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+  }
+
+  /* ── WHOLESALE INFO ── */
+  #wholesale {
+    background: linear-gradient(135deg, #0e0e0e 0%, #1a0a0d 100%);
+    position: relative; overflow: hidden;
+  }
+  #wholesale::before {
+    content: 'WHOLESALE';
+    position: absolute; top: -20px; right: -40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px; letter-spacing: 10px;
+    color: rgba(200,16,46,0.04);
+    pointer-events: none; user-select: none;
+    white-space: nowrap;
+  }
+
+  .wholesale-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .wholesale-table {
+    width: 100%; border-collapse: collapse; margin-top: 24px;
+  }
+  .wholesale-table thead tr {
+    background: var(--red);
+  }
+  .wholesale-table thead th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #fff;
+    padding: 12px 16px; text-align: left;
+  }
+  .wholesale-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: background .2s;
+  }
+  .wholesale-table tbody tr:hover { background: rgba(184,146,42,0.07); }
+  .wholesale-table tbody td {
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px; color: rgba(244,242,238,0.8);
+    padding: 14px 16px;
+  }
+  .wholesale-table tbody td.gold { color: var(--gold); font-weight: 600; }
+  .wholesale-table tbody td.red { color: var(--red); font-weight: 700; }
+
+  .tier-cards { display: flex; flex-direction: column; gap: 16px; }
+  .tier-card {
+    border: 1px solid rgba(184,146,42,0.2);
+    padding: 24px;
+    position: relative; overflow: hidden;
+    transition: border-color .3s;
+  }
+  .tier-card:hover { border-color: var(--gold); }
+  .tier-card.featured { border-color: var(--red); }
+  .tier-card.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute; top: 0; right: 0;
+    background: var(--red); color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    padding: 4px 10px;
+  }
+  .tier-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px; letter-spacing: 2px; color: var(--white);
+  }
+  .tier-qty {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 8px;
+  }
+  .tier-disc {
+    font-size: 32px; font-family: 'Bebas Neue', sans-serif;
+    color: var(--red);
+  }
+  .tier-disc span { font-size: 15px; color: var(--gray-light); font-family: 'Barlow', sans-serif; font-weight: 300; }
+
+  /* ── GALLERY ── */
+  #gallery {
+    background: #0d0d0d; padding: 100px 0;
+  }
+  #gallery .section-header { padding: 0 80px; margin-bottom: 48px; }
+  .gallery-scroll {
+    display: flex; gap: 4px; overflow-x: auto; padding: 0 80px 24px;
+    scrollbar-width: thin; scrollbar-color: var(--red) var(--gray);
+  }
+  .gallery-scroll::-webkit-scrollbar { height: 4px; }
+  .gallery-scroll::-webkit-scrollbar-track { background: var(--gray); }
+  .gallery-scroll::-webkit-scrollbar-thumb { background: var(--red); }
+  .gallery-item {
+    flex: 0 0 320px; height: 420px; overflow: hidden; position: relative;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .5s, filter .4s;
+    filter: grayscale(30%) brightness(0.8);
+  }
+  .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0%) brightness(1); }
+
+  /* ── WHY US ── */
+  #why-us {
+    background: var(--gray);
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center;
+  }
+  .why-image { position: relative; }
+  .why-image img { width: 100%; height: 560px; object-fit: cover; }
+  .why-image::after {
+    content: '';
+    position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px;
+    border: 2px solid rgba(184,146,42,0.3); z-index: -1;
+  }
+
+  .features-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  }
+  .feature-item {
+    padding: 24px;
+    background: rgba(8,8,8,0.5);
+    border-left: 3px solid var(--red);
+    transition: border-color .2s, background .2s;
+  }
+  .feature-item:hover {
+    border-color: var(--gold);
+    background: rgba(8,8,8,0.8);
+  }
+  .feature-icon {
+    font-size: 28px; margin-bottom: 12px;
+  }
+  .feature-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--white);
+    margin-bottom: 8px;
+  }
+  .feature-desc {
+    font-size: 13px; line-height: 1.6;
+    color: rgba(244,242,238,0.6);
+  }
+
+  /* ── PROCESS ── */
+  #process { background: var(--black); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(5,1fr); gap: 0; margin-top: 48px;
+    position: relative;
+  }
+  .process-steps::after {
+    content: '';
+    position: absolute; top: 36px; left: 10%; right: 10%; height: 2px;
+    background: linear-gradient(90deg, var(--red), var(--gold), var(--red));
+    z-index: 0;
+  }
+  .step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+  .step-num {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--gray); border: 3px solid var(--red);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px; color: var(--gold);
+    transition: background .3s, border-color .3s;
+  }
+  .step:hover .step-num { background: var(--red); border-color: var(--gold); color: #fff; }
+  .step-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--white);
+    margin-bottom: 8px;
+  }
+  .step-desc { font-size: 12px; line-height: 1.6; color: var(--gray-light); }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: linear-gradient(135deg, #0d0d0d 0%, #150508 100%);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  }
+  .contact-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px; letter-spacing: 3px; color: var(--white);
+    margin-bottom: 32px;
+  }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    margin-bottom: 24px;
+  }
+  .contact-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: rgba(200,16,46,0.15);
+    border: 1px solid rgba(200,16,46,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .contact-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .contact-val {
+    font-size: 16px; color: var(--white);
+    text-decoration: none;
+  }
+  .contact-val:hover { color: var(--gold); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif; font-size: 15px;
+    padding: 12px 16px;
+    outline: none; transition: border-color .2s;
+    -webkit-appearance: none;
+  }
+  .form-group select option { background: var(--gray); }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-submit {
+    align-self: flex-start;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #050505;
+    border-top: 1px solid rgba(184,146,42,0.15);
+    padding: 64px 80px 40px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px;
+    margin-bottom: 48px;
+  }
+  .footer-brand p {
+    font-size: 14px; line-height: 1.8;
+    color: var(--gray-mid); margin-top: 16px; max-width: 280px;
+  }
+  .footer-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    font-size: 14px; color: var(--gray-mid); text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-col ul li a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: var(--gray-mid);
+  }
+  .footer-bottom span { color: var(--red); }
+
+  .usa-flag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── SCROLL REVEAL ANIMATION ── */
+  .reveal {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    section { padding: 72px 24px; }
+    #hero .hero-content { padding: 0 24px; }
+    #hero .hero-stats { right: 24px; bottom: 40px; gap: 24px; }
+    .stat-num { font-size: 32px; }
+    #about, #why-us, #contact, .wholesale-grid { grid-template-columns: 1fr; }
+    .about-img-wrap img, .why-image img { height: 300px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .process-steps::after { display: none; }
+    #gallery .section-header, .gallery-scroll { padding: 0 24px; }
+    footer { padding: 48px 24px 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    #wholesale { padding: 72px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">AI</div>
+    <div class="nav-logo-text">ALLY <span>IMPEX</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#wholesale">Wholesale</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1800&q=80" alt="Sportswear manufacturing">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🇺🇸 USA-Based Manufacturer · B2B & B2C Wholesale</div>
+    <h1 class="hero-title">
+      ALLY<br>
+      <span class="accent">IMPEX</span><br>
+      <span class="gold" style="font-size:0.55em;letter-spacing:8px;">APPAREL CO.</span>
+    </h1>
+    <p class="hero-sub">Premium Apparel & Sportswear</p>
+    <p class="hero-desc">
+      America's trusted wholesale manufacturer of high-performance sportswear and fashion apparel. Custom OEM/ODM solutions for B2B brands and B2C bulk buyers. Minimum order flexibility with competitive wholesale pricing.
+    </p>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">▶ Browse Catalog</a>
+      <a href="#contact" class="btn-outline">Request Wholesale Quote</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Products</div></div>
+    <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Years Exp.</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Countries</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap reveal">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Apparel manufacturing floor">
+    <div class="about-img-badge"><span>USA</span>BASED<br>SINCE 2012</div>
+  </div>
+  <div class="about-text reveal">
+    <div class="section-eyebrow">Who We Are</div>
+    <h2 class="section-title">CRAFTED IN <span>AMERICA</span><br>BUILT FOR THE WORLD</h2>
+    <div class="section-line"></div>
+    <p>Ally Impex is a leading USA-based wholesale manufacturer specializing in premium sportswear, activewear, athletic uniforms, and fashion apparel. We serve both B2B clients — including retailers, gyms, sports brands, and corporate buyers — as well as B2C wholesale customers seeking bulk orders at competitive prices.</p>
+    <p>Our vertically integrated supply chain ensures the highest quality control, from raw material sourcing to finished goods. Every stitch, seam, and fabric selection reflects our commitment to performance and style.</p>
+    <p>With custom branding, OEM/ODM services, and flexible MOQ starting at just 50 units per style, we make wholesale accessible for businesses of every size.</p>
+    <div class="about-flags">
+      <div class="flag-chip">ISO Certified Quality</div>
+      <div class="flag-chip">Custom OEM/ODM</div>
+      <div class="flag-chip">Fast Turnaround</div>
+      <div class="flag-chip">USA Compliance</div>
+      <div class="flag-chip">Eco-Friendly Fabrics</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO BANNER -->
+<div id="video-section">
+  <img class="video-fallback" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1800&q=80" alt="Manufacturing process">
+  <div class="video-overlay-content">
+    <h2>WHERE<br>PERFORMANCE<br>MEETS <em>DESIGN</em></h2>
+    <p>Precision manufacturing · Wholesale pricing · Global delivery</p>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-eyebrow reveal">Our Catalog</div>
+  <h2 class="section-title reveal">WHOLESALE <span>PRODUCTS</span></h2>
+  <div class="section-line reveal"></div>
+  <p class="reveal" style="color:rgba(244,242,238,0.65);margin-bottom:48px;max-width:600px;font-size:15px;line-height:1.7;">
+    All prices are wholesale/bulk rates in USD. Custom branding, labeling, and private-label available on all products. Prices vary by MOQ — contact us for a custom quote.
+  </p>
+  <div class="products-grid">
+
+    <div class="product-card reveal">
+      <span class="product-badge">Bestseller</span>
+      <img src="https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=700&q=80" alt="Performance Hoodie">
+      <div class="product-info">
+        <div class="product-cat">Sportswear</div>
+        <div class="product-name">Performance Training Hoodie</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $8.50</div>
+          <div class="price-note">per unit / MOQ 100</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <span class="product-badge">New</span>
+      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=700&q=80" alt="Athletic Shorts">
+      <div class="product-info">
+        <div class="product-cat">Activewear</div>
+        <div class="product-name">Pro Athletic Shorts</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $4.75</div>
+          <div class="price-note">per unit / MOQ 100</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <img src="https://images.unsplash.com/photo-1536922645668-a4f9e9ad7d39?w=700&q=80" alt="Compression Leggings">
+      <div class="product-info">
+        <div class="product-cat">Women's Activewear</div>
+        <div class="product-name">High-Waist Compression Leggings</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $6.25</div>
+          <div class="price-note">per unit / MOQ 100</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <span class="product-badge">Popular</span>
+      <img src="https://images.unsplash.com/photo-1593757147298-e064ed1419e5?w=700&q=80" alt="Sports Jersey">
+      <div class="product-info">
+        <div class="product-cat">Team Uniforms</div>
+        <div class="product-name">Custom Team Jersey</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $7.00</div>
+          <div class="price-note">per unit / MOQ 50</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <img src="https://images.unsplash.com/photo-1612966809528-33bcdc55e7e4?w=700&q=80" alt="Tracksuit">
+      <div class="product-info">
+        <div class="product-cat">Sportswear Set</div>
+        <div class="product-name">Full Tracksuit (Jacket + Pants)</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $16.50</div>
+          <div class="price-note">per set / MOQ 50</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <span class="product-badge">OEM Ready</span>
+      <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=700&q=80" alt="Polo Shirt">
+      <div class="product-info">
+        <div class="product-cat">Corporate / Casual</div>
+        <div class="product-name">Premium Dry-Fit Polo Shirt</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $5.50</div>
+          <div class="price-note">per unit / MOQ 100</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?w=700&q=80" alt="Sports Bra">
+      <div class="product-info">
+        <div class="product-cat">Women's Sportswear</div>
+        <div class="product-name">Medium-Support Sports Bra</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $4.25</div>
+          <div class="price-note">per unit / MOQ 100</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <span class="product-badge">Trending</span>
+      <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700&q=80" alt="Puffer Jacket">
+      <div class="product-info">
+        <div class="product-cat">Outerwear</div>
+        <div class="product-name">Lightweight Puffer Jacket</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $18.00</div>
+          <div class="price-note">per unit / MOQ 50</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card reveal">
+      <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?w=700&q=80" alt="Jogger Pants">
+      <div class="product-info">
+        <div class="product-cat">Casual / Streetwear</div>
+        <div class="product-name">Fleece Jogger Pants</div>
+        <div class="product-price">
+          <div class="price-tag">FROM $6.75</div>
+          <div class="price-note">per unit / MOQ 100</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHOLESALE TIERS -->
+<section id="wholesale">
+  <div class="section-eyebrow reveal">Wholesale Pricing</div>
+  <h2 class="section-title reveal">B2B & B2C <span>WHOLESALE</span></h2>
+  <div class="section-line reveal"></div>
+  <div class="wholesale-grid">
+    <div>
+      <p style="color:rgba(244,242,238,0.7);font-size:15px;line-height:1.8;margin-bottom:32px;">
+        Ally Impex exclusively serves wholesale clients — both B2B (retailers, brands, distributors, gyms) and B2C bulk buyers. All orders receive custom labeling, packaging, and branding support.
+      </p>
+      <table class="wholesale-table">
+        <thead>
+          <tr>
+            <th>Product Category</th>
+            <th>MOQ</th>
+            <th>Unit Price</th>
+            <th>Bulk (500+)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Training Hoodies</td><td>100 pcs</td><td class="gold">$8.50</td><td class="red">$6.80</td></tr>
+          <tr><td>Athletic Shorts</td><td>100 pcs</td><td class="gold">$4.75</td><td class="red">$3.90</td></tr>
+          <tr><td>Compression Leggings</td><td>100 pcs</td><td class="gold">$6.25</td><td class="red">$5.10</td></tr>
+          <tr><td>Custom Jerseys</td><td>50 pcs</td><td class="gold">$7.00</td><td class="red">$5.50</td></tr>
+          <tr><td>Full Tracksuits</td><td>50 sets</td><td class="gold">$16.50</td><td class="red">$13.20</td></tr>
+          <tr><td>Polo Shirts</td><td>100 pcs</td><td class="gold">$5.50</td><td class="red">$4.40</td></tr>
+          <tr><td>Sports Bras</td><td>100 pcs</td><td class="gold">$4.25</td><td class="red">$3.40</td></tr>
+          <tr><td>Puffer Jackets</td><td>50 pcs</td><td class="gold">$18.00</td><td class="red">$14.50</td></tr>
+          <tr><td>Fleece Joggers</td><td>100 pcs</td><td class="gold">$6.75</td><td class="red">$5.40</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 style="font-family:'Barlow Condensed';font-size:18px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;">Wholesale Tiers</h3>
+      <div class="tier-cards">
+        <div class="tier-card">
+          <div class="tier-qty">50 – 199 Units</div>
+          <div class="tier-label">STARTER WHOLESALE</div>
+          <div class="tier-disc">5% OFF <span>standard pricing</span></div>
+        </div>
+        <div class="tier-card featured">
+          <div class="tier-qty">200 – 499 Units</div>
+          <div class="tier-label">BUSINESS WHOLESALE</div>
+          <div class="tier-disc">15% OFF <span>standard pricing</span></div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-qty">500 – 999 Units</div>
+          <div class="tier-label">PREMIUM BULK</div>
+          <div class="tier-disc">22% OFF <span>standard pricing</span></div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-qty">1000+ Units</div>
+          <div class="tier-label">ENTERPRISE / OEM</div>
+          <div class="tier-disc">CUSTOM <span>negotiated rates</span></div>
+        </div>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:var(--gray-light);line-height:1.6;">
+        ✔ Custom private label & hangtags included<br>
+        ✔ Mixed SKU orders accepted<br>
+        ✔ Net-30 payment terms for qualified accounts<br>
+        ✔ Worldwide shipping from USA warehouses
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div id="gallery">
+  <div class="section-header">
+    <div class="section-eyebrow reveal">Visual Showcase</div>
+    <h2 class="section-title reveal">PRODUCT <span>GALLERY</span></h2>
+    <div class="section-line reveal"></div>
+  </div>
+  <div class="gallery-scroll">
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=600&q=80" alt="Sportswear 1"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="Gym apparel"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80" alt="Athletic wear"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=600&q=80" alt="Running gear"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?w=600&q=80" alt="Women activewear"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1566206091558-7f218b696731?w=600&q=80" alt="Training gear"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80" alt="Outdoor sportswear"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&q=80" alt="Yoga wear"></div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="why-image reveal">
+    <img src="https://images.unsplash.com/photo-1530982011887-3cc11cc85693?w=900&q=80" alt="Quality control">
+  </div>
+  <div>
+    <div class="section-eyebrow reveal">Our Edge</div>
+    <h2 class="section-title reveal">WHY CHOOSE <span>ALLY IMPEX</span></h2>
+    <div class="section-line reveal"></div>
+    <div class="features-grid">
+      <div class="feature-item reveal">
+        <div class="feature-icon">🏭</div>
+        <div class="feature-title">USA-Based Operations</div>
+        <div class="feature-desc">Headquartered in the USA with full compliance to American quality and labor standards.</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">🎨</div>
+        <div class="feature-title">Custom OEM/ODM</div>
+        <div class="feature-desc">Full private label services: custom logos, labels, hangtags, packaging, and colorways.</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Fast Lead Times</div>
+        <div class="feature-desc">Standard orders ship in 21–30 days. Rush production available for urgent orders.</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-title">Sustainable Materials</div>
+        <div class="feature-desc">Eco-certified fabrics, recycled polyester, and organic cotton options available.</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">Competitive Pricing</div>
+        <div class="feature-desc">Direct manufacturer pricing with no middleman. Save 30–50% vs retail sourcing.</div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-icon">🔍</div>
+        <div class="feature-title">Quality Assurance</div>
+        <div class="feature-desc">Every batch passes multi-point inspection before dispatch. ISO-certified QC process.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-eyebrow reveal" style="text-align:center;">How It Works</div>
+  <h2 class="section-title reveal" style="text-align:center;">OUR <span>ORDER PROCESS</span></h2>
+  <div class="section-line reveal" style="margin:0 auto 48px;"></div>
+  <div class="process-steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <div class="step-title">Inquiry & Quote</div>
+      <div class="step-desc">Submit your product requirements, quantity, and customization needs. We respond within 24hrs.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">02</div>
+      <div class="step-title">Sampling</div>
+      <div class="step-desc">Receive physical samples for approval. Samples delivered in 7–10 business days.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">03</div>
+      <div class="step-title">Confirmation</div>
+      <div class="step-desc">Approve samples, finalize order details, artwork, and place deposit to start production.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">04</div>
+      <div class="step-title">Production</div>
+      <div class="step-desc">Full production with regular updates and QC photos. Typically 21–30 days.</div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">05</div>
+      <div class="step-title">Delivery</div>
+      <div class="step-desc">Shipped via air or sea freight. Full tracking provided until delivery at your door.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info reveal">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-title">LET'S BUILD<br><span>TOGETHER</span></h2>
+    <div class="section-line"></div>
+    <h3>Contact Ally Impex</h3>
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div>
+        <div class="contact-label">Email</div>
+        <a href="mailto:Allyimpex9@gmail.com" class="contact-val">Allyimpex9@gmail.com</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">Phone / WhatsApp</div>
+        <a href="tel:+923249981194" class="contact-val">+92 324 9981194</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🇺🇸</div>
+      <div>
+        <div class="contact-label">Operations</div>
+        <div class="contact-val">United States of America</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🕐</div>
+      <div>
+        <div class="contact-label">Business Hours</div>
+        <div class="contact-val">Mon – Sat · 9:00 AM – 6:00 PM EST</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📦</div>
+      <div>
+        <div class="contact-label">Clients We Serve</div>
+        <div class="contact-val">B2B Wholesale · B2C Bulk Orders Only</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div style="font-family:'Barlow Condensed';font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;">Send a Wholesale Inquiry</div>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Business Email</label>
+        <input type="email" placeholder="john@yourbrand.com">
+      </div>
+      <div class="form-group">
+        <label>Company / Brand Name</label>
+        <input type="text" placeholder="Your Brand Inc.">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Client Type</label>
+          <select>
+            <option value="">Select type</option>
+            <option>B2B — Retailer / Brand</option>
+            <option>B2B — Distributor</option>
+            <option>B2B — Gym / Club</option>
+            <option>B2C — Bulk Buyer</option>
+            <option>B2B — Corporate</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Estimated Order Qty</label>
+          <select>
+            <option value="">Select range</option>
+            <option>50 – 199 units</option>
+            <option>200 – 499 units</option>
+            <option>500 – 999 units</option>
+            <option>1,000 – 4,999 units</option>
+            <option>5,000+ units</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Products of Interest</label>
+        <input type="text" placeholder="e.g. Hoodies, Joggers, Custom Jerseys...">
+      </div>
+      <div class="form-group">
+        <label>Message / Requirements</label>
+        <textarea placeholder="Describe your requirements, custom branding needs, preferred fabrics, delivery timeline, etc."></textarea>
+      </div>
+      <div class="form-submit">
+        <a href="mailto:Allyimpex9@gmail.com" class="btn-primary">Send Inquiry ➤</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <div class="nav-logo-icon">AI</div>
+        <div class="nav-logo-text">ALLY <span>IMPEX</span></div>
+      </div>
+      <p>Premium apparel and sportswear manufacturer serving B2B and B2C wholesale clients across the USA and globally. Quality, performance, and competitive pricing — guaranteed.</p>
+      <div style="margin-top:20px;" class="usa-flag">🇺🇸 Proudly USA-Based</div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#products">Training Hoodies</a></li>
+        <li><a href="#products">Athletic Shorts</a></li>
+        <li><a href="#products">Compression Leggings</a></li>
+        <li><a href="#products">Custom Jerseys</a></li>
+        <li><a href="#products">Tracksuits</a></li>
+        <li><a href="#products">Puffer Jackets</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#wholesale">B2B Wholesale</a></li>
+        <li><a href="#wholesale">B2C Bulk Orders</a></li>
+        <li><a href="#contact">Custom OEM/ODM</a></li>
+        <li><a href="#contact">Private Labeling</a></li>
+        <li><a href="#contact">Sample Orders</a></li>
+        <li><a href="#process">How It Works</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:Allyimpex9@gmail.com">Allyimpex9@gmail.com</a></li>
+        <li><a href="tel:+923249981194">+92 324 9981194</a></li>
+        <li><a href="#">United States of America</a></li>
+        <li><a href="#">Mon–Sat 9AM–6PM EST</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2024 <span>Ally Impex</span>. All Rights Reserved. · B2B & B2C Wholesale Only · USA</div>
+    <div style="color:var(--gray-mid);font-size:11px;">Prices subject to order quantity. Contact us for custom pricing.</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(r => observer.observe(r));
+
+  // Smooth nav active state
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current
+        ? 'var(--gold)' : '';
+    });
+  });
+</script>
+</body>
+</html>
